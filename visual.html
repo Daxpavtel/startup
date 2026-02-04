@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pramukh Enterprise: Strategic Business Blueprint</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- 
+    PALETTE SELECTION:
+    Based on "Energetic & Playful" / High Contrast for professional clarity.
+    Primary Blue: #1E3A8A (Trust, Corporate)
+    Vibrant Orange: #F97316 (Food, Energy, Spices)
+    Growth Green: #10B981 (Agriculture, Profit)
+    Background: #F3F4F6
+    -->
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A', // Deep Blue
+                        secondary: '#F97316', // Vibrant Orange
+                        accent: '#10B981', // Growth Green
+                        danger: '#EF4444',
+                        dark: '#111827',
+                        light: '#F3F4F6'
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Chart Container Utilities */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        
+        @media (max-width: 640px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E3A8A; 
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #F97316; 
+        }
+
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+    </style>
+    <!-- 
+    HTML COMMENT: 
+    Narrative Plan:
+    1. Introduction: Hook the user with the 100Cr Vision.
+    2. Reality Check (SWOT): Establish the ground reality.
+    3. Market & Product: Validate demand and map the product evolution.
+    4. Operations (Supply Chain/Mfg): Define how to build it.
+    5. GTM & Brand: Define how to sell it.
+    6. Financials & Risk: Define the money and the pitfalls.
+    7. Founder Advice: Closing wisdom.
+    
+    Chart Choices:
+    - Market Demand: Bar Chart (Comparison)
+    - Product Margins: Horizontal Bar (Comparison)
+    - Scale Roadmap: Line Chart (Change over time)
+    - Risk Analysis: Radar Chart (Multivariate analysis)
+    - Financial Growth: Stacked Area (Composition & Change)
+    
+    NO SVG USED. NO MERMAID JS USED.
+    -->
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+
+    <!-- Header / Title Section -->
+    <header class="bg-primary text-white py-12 px-4 shadow-xl border-b-8 border-secondary">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="inline-block bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-wide uppercase">Strategic Blueprint</div>
+            <h1 class="text-4xl md:text-6xl font-black mb-4">From Commodity to Empire</h1>
+            <p class="text-xl md:text-2xl text-blue-100 font-light max-w-3xl mx-auto">
+                A 10-Year Roadmap for <span class="font-bold text-white">Pramukh Enterprise</span> to dominate the Dehydrated Vegetable Industry.
+            </p>
+            <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-blue-100">
+                <div class="border border-blue-700 rounded p-2">
+                    <div class="text-2xl font-bold text-white">₹100 Cr</div>
+                    <div class="text-xs uppercase">Revenue Target</div>
+                </div>
+                <div class="border border-blue-700 rounded p-2">
+                    <div class="text-2xl font-bold text-white">2035</div>
+                    <div class="text-xs uppercase">Vision Year</div>
+                </div>
+                <div class="border border-blue-700 rounded p-2">
+                    <div class="text-2xl font-bold text-white">Global</div>
+                    <div class="text-xs uppercase">Export Focus</div>
+                </div>
+                <div class="border border-blue-700 rounded p-2">
+                    <div class="text-2xl font-bold text-white">Mahuva</div>
+                    <div class="text-xs uppercase">Sourcing Hub</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-12 space-y-20">
+
+        <!-- SECTION 1: Business Reality Check -->
+        <section>
+            <div class="border-l-8 border-secondary pl-6 mb-8">
+                <h2 class="text-3xl font-bold text-dark mb-2">1. Business Reality Check</h2>
+                <p class="text-gray-600">A brutal assessment of the current PDF plan vs. market reality.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Strengths -->
+                <div class="bg-white p-6 rounded-lg shadow border-t-4 border-green-500 card-hover">
+                    <h3 class="font-bold text-xl mb-4 flex items-center"><span class="text-green-500 mr-2 text-2xl">✚</span> What is Strong</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start"><span class="mr-2">•</span> <strong>Location Advantage:</strong> Mahuva is the "Onion Capital". Sourcing costs will be your biggest moat.</li>
+                        <li class="flex items-start"><span class="mr-2">•</span> <strong>Ambition:</strong> The goal to be like Tata/Adani provides necessary psychological fuel for the long haul.</li>
+                        <li class="flex items-start"><span class="mr-2">•</span> <strong>Product Clarity:</strong> Starting with Onion Powder is correct; it's the highest volume SKU.</li>
+                    </ul>
+                </div>
+                
+                <!-- Weaknesses/Risks -->
+                <div class="bg-white p-6 rounded-lg shadow border-t-4 border-red-500 card-hover">
+                    <h3 class="font-bold text-xl mb-4 flex items-center"><span class="text-red-500 mr-2 text-2xl">⚠</span> The Dangerous Gaps</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start"><span class="mr-2">•</span> <strong>Commodity Trap:</strong> Without a brand, you are just a price-taker competing with 500 other Gujarat traders.</li>
+                        <li class="flex items-start"><span class="mr-2">•</span> <strong>Retail Burn:</strong> Pushing "Pramukh" brand in D-Mart/Retail initially is a cash incinerator. Retailers demand 40%+ margin.</li>
+                        <li class="flex items-start"><span class="mr-2">•</span> <strong>Single SKU Fragility:</strong> If onion prices crash or spike (which they do every 2 years), your entire cash flow breaks.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Market Opportunity -->
+        <section>
+            <div class="border-l-8 border-primary pl-6 mb-8">
+                <h2 class="text-3xl font-bold text-dark mb-2">2. Market Opportunity Validation</h2>
+                <p class="text-gray-600">Where the real money is hiding. Hint: It's not in selling 100g packs to Indian housewives (yet).</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-lg font-bold text-gray-700 mb-4 text-center">Export Demand Hotspots (Volume vs Margin)</h3>
+                    <div class="chart-container">
+                        <canvas id="marketChart"></canvas>
+                    </div>
+                    <p class="text-xs text-center text-gray-500 mt-2">Data estimates based on current Indian agri-export trends.</p>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
+                        <h4 class="font-bold text-primary mb-2">Why Vegetable Powders?</h4>
+                        <p class="text-sm mb-2"><strong>1. The "Hidden" Ingredient:</strong> Every packet of noodles, chips, premix gravy, and sauce needs this. You are selling "convenience infrastructure" to food giants.</p>
+                        <p class="text-sm"><strong>2. Inflation Hedge:</strong> Restaurants use powder when fresh onion prices hit ₹80/kg. You are their insurance policy.</p>
+                    </div>
+                    <div class="bg-orange-50 p-6 rounded-lg border border-orange-100">
+                        <h4 class="font-bold text-secondary mb-2">The Winning Mix</h4>
+                        <ul class="text-sm space-y-2">
+                            <li><strong>USA/EU:</strong> Low Volume, High Margin, Strict Quality (The Goal).</li>
+                            <li><strong>Indonesia/UAE:</strong> Massive Volume, Low Margin (The Cash Flow).</li>
+                            <li><strong>India HoReCa:</strong> The sleeper giant. Hotels need consistency.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Product Ladder -->
+        <section>
+            <div class="border-l-8 border-secondary pl-6 mb-8">
+                <h2 class="text-3xl font-bold text-dark mb-2">3. Product Expansion Strategy</h2>
+                <p class="text-gray-600">Don't launch everything at once. Build the ladder.</p>
+            </div>
+
+            <!-- Product Phase Timeline -->
+            <div class="mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Phase 1 -->
+                    <div class="bg-white border-b-4 border-blue-500 p-6 shadow-sm">
+                        <div class="text-4xl font-black text-blue-100 mb-2">01</div>
+                        <h3 class="font-bold text-lg mb-2">The "Cash Cow" Phase</h3>
+                        <p class="text-sm text-gray-500 mb-3">Years 1-3</p>
+                        <ul class="text-sm space-y-1 font-medium">
+                            <li>• Onion Powder (Red/White)</li>
+                            <li>• Onion Flakes (Kibbled)</li>
+                            <li>• Garlic Powder</li>
+                            <li>• Fried Onion (Biryani market)</li>
+                        </ul>
+                    </div>
+                     <!-- Phase 2 -->
+                     <div class="bg-white border-b-4 border-orange-500 p-6 shadow-sm">
+                        <div class="text-4xl font-black text-orange-100 mb-2">02</div>
+                        <h3 class="font-bold text-lg mb-2">The "Margin" Phase</h3>
+                        <p class="text-sm text-gray-500 mb-3">Years 3-5</p>
+                        <ul class="text-sm space-y-1 font-medium">
+                            <li>• Tomato Powder (Instant Soups)</li>
+                            <li>• Spinach/Beetroot (Natural Color)</li>
+                            <li>• Ginger Powder (Tea/Pharma)</li>
+                        </ul>
+                    </div>
+                     <!-- Phase 3 -->
+                     <div class="bg-white border-b-4 border-green-500 p-6 shadow-sm">
+                        <div class="text-4xl font-black text-green-100 mb-2">03</div>
+                        <h3 class="font-bold text-lg mb-2">The "Empire" Phase</h3>
+                        <p class="text-sm text-gray-500 mb-3">Years 5+</p>
+                        <ul class="text-sm space-y-1 font-medium">
+                            <li>• Functional Health Blends</li>
+                            <li>• Smoothie Mixes</li>
+                            <li>• Curated Masala Blends (B2C)</li>
+                            <li>• White Label for Supermarkets</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Margin Chart -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg font-bold text-gray-700 mb-4 text-center">Projected Gross Margins per Category</h3>
+                <div class="chart-container">
+                    <canvas id="marginChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Supply Chain -->
+        <section>
+            <div class="border-l-8 border-primary pl-6 mb-8">
+                <h2 class="text-3xl font-bold text-dark mb-2">4. Supply Chain Control</h2>
+                <p class="text-gray-600">The battle is won in Mahuva, not on Amazon.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <!-- Visual Flow -->
+                <div class="md:col-span-8 bg-white p-8 rounded-lg shadow relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-gray-100 px-3 py-1 text-xs font-bold text-gray-400">Sourcing Flow</div>
+                    <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center">
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-2xl mb-2">🚜</div>
+                            <div class="font-bold text-sm">Farmers</div>
+                            <div class="text-xs text-gray-500">Direct Contract</div>
+                        </div>
+                        <div class="text-gray-300 text-2xl hidden md:block">➔</div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center text-2xl mb-2">⚖️</div>
+                            <div class="font-bold text-sm">Mandi Aggregation</div>
+                            <div class="text-xs text-gray-500">Seasonal Purchase</div>
+                        </div>
+                        <div class="text-gray-300 text-2xl hidden md:block">➔</div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-2xl mb-2">🏭</div>
+                            <div class="font-bold text-sm">Processing Unit</div>
+                            <div class="text-xs text-gray-500">Dehydration</div>
+                        </div>
+                        <div class="text-gray-300 text-2xl hidden md:block">➔</div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-2xl mb-2">📦</div>
+                            <div class="font-bold text-sm">Cold Storage</div>
+                            <div class="text-xs text-gray-500">Price Arbitrage</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Strategy -->
+                <div class="md:col-span-4 bg-gray-800 text-white p-6 rounded-lg shadow">
+                    <h4 class="font-bold text-secondary mb-3">Strategic Advice</h4>
+                    <ul class="text-sm space-y-3">
+                        <li><strong>Rule #1:</strong> Buy huge when prices crash (Feb-May). Onion is 85% water; you are essentially evaporating logistics costs.</li>
+                        <li><strong>Rule #2:</strong> Do not own farm land initially. Own the *contract*.</li>
+                        <li><strong>Rule #3:</strong> Invest in humidity-controlled warehousing before marketing. Bad storage = Clumping = Rejected Export.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Scale Roadmap -->
+        <section>
+            <div class="border-l-8 border-secondary pl-6 mb-8">
+                <h2 class="text-3xl font-bold text-dark mb-2">5. Manufacturing Roadmap</h2>
+                <p class="text-gray-600">Start lean, scale with cash flow.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                <h3 class="text-lg font-bold text-gray-700 mb-4 text-center">Production Capacity Plan (Metric Tons/Month)</h3>
+                <div class="chart-container">
+                    <canvas id="scaleChart"></canvas>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                <div class="bg-gray-50 p-4 rounded border">
+                    <h4 class="font-bold text-primary">Stage 1: Job Work</h4>
+                    <p class="text-xs mt-2">Don't buy machinery yet. Rent capacity in existing Mahuva plants. Focus on QC and Packaging.</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded border">
+                    <h4 class="font-bold text-primary">Stage 2: Own VFFS</h4>
+                    <p class="text-xs mt-2">Buy the VFFS packing machine first. Keep dehydration outsourced. Own the final pack presentation.</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded border">
+                    <h4 class="font-bold text-primary">Stage 3: Full Integration</h4>
+                    <p class="text-xs mt-2">Once export contracts > 50 Tons/month, build the dehydration line to control moisture levels exactly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6 & 7: Certifications & GTM -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Certifications -->
+            <section>
+                <div class="border-l-8 border-primary pl-6 mb-8">
+                    <h2 class="text-2xl font-bold text-dark mb-2">6. Compliance Grid</h2>
+                    <p class="text-sm text-gray-600">The keys to the kingdom.</p>
+                </div>
+                <div class="grid grid-cols-1 gap-3">
+                    <div class="flex items-center justify-between bg-white p-4 rounded shadow border-l-4 border-green-500">
+                        <span class="font-bold">FSSAI & GST</span>
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Mandatory (Day 1)</span>
+                    </div>
+                    <div class="flex items-center justify-between bg-white p-4 rounded shadow border-l-4 border-blue-500">
+                        <span class="font-bold">APEDA & IEC</span>
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">For Export (Month 3)</span>
+                    </div>
+                    <div class="flex items-center justify-between bg-white p-4 rounded shadow border-l-4 border-orange-500">
+                        <span class="font-bold">US FDA</span>
+                        <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">For USA (Year 1)</span>
+                    </div>
+                    <div class="flex items-center justify-between bg-white p-4 rounded shadow border-l-4 border-purple-500">
+                        <span class="font-bold">BRC / Kosher / Halal</span>
+                        <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">The Money Makers (Year 2)</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GTM Strategy -->
+            <section>
+                <div class="border-l-8 border-secondary pl-6 mb-8">
+                    <h2 class="text-2xl font-bold text-dark mb-2">7. Go-To-Market</h2>
+                    <p class="text-sm text-gray-600">Sequence matters more than speed.</p>
+                </div>
+                <div class="relative bg-white p-6 rounded shadow h-full flex flex-col justify-center">
+                    <!-- Pyramid Representation using CSS -->
+                    <div class="space-y-1">
+                        <div class="bg-primary text-white p-2 text-center text-sm font-bold w-1/3 mx-auto rounded shadow">Phase 3: Retail Brand (D-Mart)</div>
+                        <div class="bg-blue-600 text-white p-2 text-center text-sm font-bold w-2/3 mx-auto rounded shadow">Phase 2: Quick Commerce (Blinkit)</div>
+                        <div class="bg-blue-400 text-white p-2 text-center text-sm font-bold w-full mx-auto rounded shadow">Phase 1: B2B Industrial & Bulk Export</div>
+                    </div>
+                    <p class="mt-6 text-xs text-gray-500 italic text-center">
+                        "Do not fight for shelf space in D-Mart until your factory is paid for by export profits. B2B builds the factory; B2C builds the legacy."
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- SECTION 8: Brand & Trust -->
+        <section>
+            <div class="border-l-8 border-primary pl-6 mb-8">
+                <h2 class="text-3xl font-bold text-dark mb-2">8. Brand Positioning</h2>
+                <p class="text-gray-600">Transform from a "Commodity Trader" to a "Solution Provider".</p>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse bg-white shadow-lg rounded-lg overflow-hidden">
+                    <thead class="bg-gray-100 text-gray-600 uppercase text-xs">
+                        <tr>
+                            <th class="p-4">Feature</th>
+                            <th class="p-4 text-red-500">Commodity Player (The Trap)</th>
+                            <th class="p-4 text-green-600">Pramukh Enterprise (The Goal)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm divide-y divide-gray-200">
+                        <tr>
+                            <td class="p-4 font-bold">Sales Pitch</td>
+                            <td class="p-4">"I have cheapest onion powder."</td>
+                            <td class="p-4">"I have the most consistent flavor profile for your recipe."</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold">Packaging</td>
+                            <td class="p-4">Plain silver pouches.</td>
+                            <td class="p-4">Resealable, moisture-proof, usage instructions, recipe QR code.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold">Target</td>
+                            <td class="p-4">Anyone who buys.</td>
+                            <td class="p-4">Specific Chefs, Purchasing Managers, Health Conscious Moms.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold">Trust Signal</td>
+                            <td class="p-4">None.</td>
+                            <td class="p-4">Traceability: "Scan to see the farm this onion came from."</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION 9 & 10: Financials & Risks -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Financial Model -->
+            <section class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="mb-4">
+                    <h2 class="text-xl font-bold text-dark">9. Financial Trajectory</h2>
+                    <p class="text-xs text-gray-500">Revenue Growth vs. OpEx Breakdown</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="financialChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Risk Management -->
+            <section class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="mb-4">
+                    <h2 class="text-xl font-bold text-dark">10. Risk Radar</h2>
+                    <p class="text-xs text-gray-500">Where the business is most vulnerable</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="riskChart"></canvas>
+                </div>
+            </section>
+        </div>
+
+        <!-- SECTION 11: Growth Prediction -->
+        <section>
+            <div class="border-l-8 border-accent pl-6 mb-8">
+                <h2 class="text-3xl font-bold text-dark mb-2">11. The 10-Year Prediction</h2>
+                <p class="text-gray-600">Conservative vs. Aggressive Scenarios to reach ₹100 Crore.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="chart-container">
+                    <canvas id="growthChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 12: Founder Advice -->
+        <section class="bg-dark text-white p-8 md:p-12 rounded-xl shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 text-gray-800 opacity-10 text-9xl font-black -mr-10 -mt-10">”</div>
+            <h2 class="text-3xl font-bold text-secondary mb-6">12. Final Founder Advice</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-2">Year 1 Focus: Survival & QC</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        Forget becoming Adani for 365 days. Focus on one thing: <strong>Quality Consistency</strong>. If your second shipment tastes different from your first, you are dead in the export market. Sleep on the factory floor if you have to.
+                    </p>
+                    <h3 class="text-xl font-bold text-white mb-2">What to Ignore</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Ignore vanity metrics like Instagram likes or fancy office furniture. Ignore low-margin local wholesalers who demand 90 days credit. Cash flow is oxygen.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-2">The Difference</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        Small brands sell powder. Empires sell <strong>Supply Chain Security</strong>. Your biggest clients (Nestle, Unilever, D-Mart) don't care about your logo; they care that you never run out of stock and never have metal particles in the powder.
+                    </p>
+                    <div class="mt-6 border-l-4 border-secondary pl-4">
+                        <p class="italic text-lg text-white">"You don't build a 100 Crore brand by shouting. You build it by shipping perfectly, every single time, for a decade."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-200 text-center py-8 mt-12">
+        <p class="text-gray-600 text-sm">Strategic Blueprint generated for Pramukh Enterprise</p>
+    </footer>
+
+    <!-- SCRIPT SECTION -->
+    <script>
+        // --- HELPER FUNCTIONS ---
+        // Label wrapping logic for Chart.js (Strict 16 char limit)
+        function wrapLabels(labels) {
+            return labels.map(label => {
+                if (label.length > 16) {
+                    const words = label.split(' ');
+                    const lines = [];
+                    let currentLine = words[0];
+
+                    for (let i = 1; i < words.length; i++) {
+                        if ((currentLine + " " + words[i]).length <= 16) {
+                            currentLine += " " + words[i];
+                        } else {
+                            lines.push(currentLine);
+                            currentLine = words[i];
+                        }
+                    }
+                    lines.push(currentLine);
+                    return lines;
+                }
+                return label;
+            });
+        }
+
+        // Common Tooltip Config
+        const commonTooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // --- CHART 1: Market Opportunity (Bar) ---
+        const marketCtx = document.getElementById('marketChart').getContext('2d');
+        new Chart(marketCtx, {
+            type: 'bar',
+            data: {
+                labels: wrapLabels(['USA (High Margin)', 'European Union', 'UAE / Middle East', 'Indonesia (Volume)', 'Domestic B2B', 'Domestic Retail']),
+                datasets: [{
+                    label: 'Demand Scale (1-10)',
+                    data: [8, 7, 9, 10, 6, 3],
+                    backgroundColor: ['#1E3A8A', '#1E3A8A', '#F97316', '#F97316', '#10B981', '#9CA3AF'],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: commonTooltipConfig
+                },
+                scales: {
+                    y: { beginAtZero: true, max: 12, title: { display: true, text: 'Opportunity Score' } }
+                }
+            }
+        });
+
+        // --- CHART 2: Product Margins (Horizontal Bar) ---
+        const marginCtx = document.getElementById('marginChart').getContext('2d');
+        new Chart(marginCtx, {
+            type: 'bar',
+            indexAxis: 'y',
+            data: {
+                labels: wrapLabels(['Onion Powder (Std)', 'Onion Flakes', 'Garlic Powder', 'Specialty (Beet/Spinach)', 'Functional Blends', 'Small Retail Packs']),
+                datasets: [{
+                    label: 'Gross Margin %',
+                    data: [12, 15, 22, 35, 45, 25],
+                    backgroundColor: ['#9CA3AF', '#9CA3AF', '#F97316', '#10B981', '#1E3A8A', '#F59E0B'],
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: commonTooltipConfig
+                },
+                scales: {
+                    x: { beginAtZero: true, title: { display: true, text: 'Margin Percentage' } }
+                }
+            }
+        });
+
+        // --- CHART 3: Scale Roadmap (Line) ---
+        const scaleCtx = document.getElementById('scaleChart').getContext('2d');
+        new Chart(scaleCtx, {
+            type: 'line',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                datasets: [{
+                    label: 'Monthly Production Capacity (Tons)',
+                    data: [10, 25, 60, 120, 250],
+                    borderColor: '#1E3A8A',
+                    backgroundColor: 'rgba(30, 58, 138, 0.1)',
+                    fill: true,
+                    tension: 0.3,
+                    pointBackgroundColor: '#F97316',
+                    pointRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: commonTooltipConfig
+                },
+                scales: {
+                    y: { beginAtZero: true, title: { display: true, text: 'Tons Per Month' } }
+                }
+            }
+        });
+
+        // --- CHART 4: Financial Model (Stacked Area) ---
+        const finCtx = document.getElementById('financialChart').getContext('2d');
+        new Chart(finCtx, {
+            type: 'line',
+            data: {
+                labels: ['Y1', 'Y2', 'Y3', 'Y4', 'Y5'],
+                datasets: [
+                    {
+                        label: 'Revenue (₹ Cr)',
+                        data: [1.5, 5, 12, 25, 45],
+                        borderColor: '#10B981',
+                        backgroundColor: '#10B981',
+                        stack: 'combined',
+                        type: 'bar',
+                        order: 2
+                    },
+                    {
+                        label: 'OpEx & COGS',
+                        data: [1.4, 4.2, 9.5, 19, 32],
+                        borderColor: '#EF4444',
+                        backgroundColor: 'transparent',
+                        borderDash: [5, 5],
+                        type: 'line',
+                        order: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: commonTooltipConfig,
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        // --- CHART 5: Risk Radar ---
+        const riskCtx = document.getElementById('riskChart').getContext('2d');
+        new Chart(riskCtx, {
+            type: 'radar',
+            data: {
+                labels: wrapLabels(['Cash Flow (Working Cap)', 'Raw Material Price Volatility', 'Quality Rejection (Export)', 'Retail Payment Delays', 'Competition']),
+                datasets: [{
+                    label: 'Risk Severity (1-10)',
+                    data: [9, 8, 7, 9, 5],
+                    backgroundColor: 'rgba(249, 115, 22, 0.2)',
+                    borderColor: '#F97316',
+                    pointBackgroundColor: '#1E3A8A'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: commonTooltipConfig
+                },
+                scales: {
+                    r: {
+                        angleLines: { display: false },
+                        suggestedMin: 0,
+                        suggestedMax: 10
+                    }
+                }
+            }
+        });
+
+        // --- CHART 6: Growth Prediction (Multi-Line) ---
+        const growthCtx = document.getElementById('growthChart').getContext('2d');
+        new Chart(growthCtx, {
+            type: 'line',
+            data: {
+                labels: ['2025', '2026', '2027', '2028', '2029', '2030', '2031', '2032', '2033', '2034', '2035'],
+                datasets: [
+                    {
+                        label: 'Conservative (Trader Mindset)',
+                        data: [1, 2, 4, 6, 8, 12, 15, 18, 22, 25, 30],
+                        borderColor: '#9CA3AF',
+                        borderDash: [5, 5],
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Aggressive (Brand/Empire Mindset)',
+                        data: [1, 3, 8, 18, 30, 45, 65, 80, 95, 110, 130],
+                        borderColor: '#1E3A8A',
+                        backgroundColor: 'rgba(30, 58, 138, 0.05)',
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: commonTooltipConfig,
+                    title: { display: true, text: 'Revenue Projection (₹ Crores)' }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
